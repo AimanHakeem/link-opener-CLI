@@ -51,13 +51,25 @@
           // str contains arr[i]
         var match = link.includes(kw[i]);
            if (match == true) {
-            realLink1 = link.split('')[1].trim();
-            realLink2 = link.split('-')[1].trim();
-            console.log(realLink1 + realLink2);/*
-            console.log("Found a matching keyword: "+kw[i]);
-            console.log("Link Founded: " + link );
-            opn(realLink);
-            console.log("Opened Link: " + realLink);*/
+            realLink1 = link.split(' ')[0].trim();
+            realLink2 = link.split('-')[1];
+            if (realLink2 == null) {
+              console.log(realLink1);
+              console.log("Found a matching keyword: "+kw[i]);
+              console.log("Link Founded: " + realLink1);
+              opn(realLink1);
+              console.log("Opened Link: " + realLink1);
+            }
+            
+            else if (realLink2 !== null)  {
+              realLink2split = link.split('-')[1].trim();
+              console.log(realLink2split);
+              console.log("Found a matching keyword: "+kw[i]);
+              console.log("Link Founded: " + realLink2split);
+              opn(realLink2split);
+              console.log("Opened Link: " + realLink2split);
+            }
+            
             }
             else{
               console.log("Does not match");
